@@ -1,0 +1,11 @@
+<h1>유저관리 페이지</h1>
+<% @users.each do |user| %>
+  <p><%= user.email %> || <%= user.role %>
+  <%= link_to "[삭제]", admin_user_path(user), method: "delete", data: {confirm: "정말로 삭제하시겠습니까?"} %>
+  <% if user.admin? %>
+    <%= link_to "[양민으로 복귀]", admin_user_downgrade_path(user), method: "put", data: {confirm: "정말로 양민으로 복귀?"} %></p>
+  <% else %>
+    <%= link_to "[관리자로 등업]", admin_user_upgrade_path(user), method: "put", data: {confirm: "정말로 관리자 시킬거임?"} %></p>
+  <% end %>
+
+<% end %>

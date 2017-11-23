@@ -7,6 +7,29 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+User.create([
+  {
+  email: "admin@asdf.com",
+  password: "123123",
+  password_confirmation: "123123",
+  role: "admin"
+  },
+  {
+    email: "regular@asdf.com",
+    password: "123123",
+    password_confirmation: "123123",
+    role: "regular"
+  }
+  ])
+
+30.times do
+  User.create(
+    email: Faker::Internet.email,
+    password: "123123",
+    password_confirmation: "123123"
+  )
+end
+
 
 require 'csv'
 require 'awesome_print'
