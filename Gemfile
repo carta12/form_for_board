@@ -4,7 +4,8 @@ gem "fog-aws"
 gem 'mini_magick'
 gem 'faker'
 gem 'rails_12factor', group: :production
-gem 'pg', group: :production
+#gem 'pg', group: :production
+gem 'trix'
 
 gem 'cancancan', '~> 2.0'
 gem 'httparty'
